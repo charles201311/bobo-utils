@@ -1,6 +1,7 @@
 package com.bobo.common.utils;
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Random;
 
@@ -12,7 +13,58 @@ import java.util.Random;
  */
 public class DateUtil {
 	
-	//返回一个月月初时间
+	/**
+	 * 
+	 * @Title: getMonthEnd 
+	 * @Description: 返回指定月份的月末
+	 * @param date
+	 * @return
+	 * @return: Date
+	 */
+	public static Date getMonthEnd(Date date) {
+		Calendar c = Calendar.getInstance();
+		//用传入的日期初始化日历类
+		c.setTime(date);
+		//让当前月份+1
+		c.add(Calendar.MONTH, 1);
+		//让日期变成下个月月初
+		
+		Date init = getMonthInit(c.getTime());
+		
+		//用月初再次初始日历类
+		c.setTime(init);
+		//日期的秒数-1
+		c.add(Calendar.SECOND, -1);
+		
+		return c.getTime();
+		
+		
+	}
+	
+	
+	/**
+	 * 
+	 * @Title: getMonthInit 
+	 * @Description: //返回 指定月份月初时间
+	 * @param date
+	 * @return
+	 * @return: Date
+	 */
+	public static Date getMonthInit(Date date) {
+		//获取的当前系统的时间的日历类
+		Calendar c = Calendar.getInstance();
+		//用传入的日期初始化日历类
+		c.setTime(date);
+		//设置月份的天为 1
+		c.set(Calendar.DAY_OF_MONTH, 1);
+		c.set(Calendar.HOUR_OF_DAY, 0);
+		c.set(Calendar.MINUTE, 0);
+		c.set(Calendar.SECOND, 0);
+		
+		return c.getTime();
+		
+	}
+	
 	
 	
 	
