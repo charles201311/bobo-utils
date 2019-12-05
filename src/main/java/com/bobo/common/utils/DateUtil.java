@@ -11,6 +11,12 @@ import java.util.Random;
  * @date: 2019年12月5日 下午3:01:03
  */
 public class DateUtil {
+	
+	//返回一个月月初时间
+	
+	
+	
+	
 	// 返回个某一个时间段的随机日期
 
 	public static Date random(Date minDate, Date maxDate) {
