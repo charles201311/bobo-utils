@@ -6,6 +6,12 @@ import org.junit.Test;
 
 public class StringUtilTest {
 	
+	@Test
+	public   void  testIsNumber() {
+		boolean b = StringUtil.isNumber("12345.12");
+		System.out.println(b);
+	}
+	
 
 	@Test
 	public   void  testEmail() {

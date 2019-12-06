@@ -11,6 +11,17 @@ import org.junit.Test;
 public class DateUtilTest {
 	
 	
+	
+	@Test
+	public void testGetAge() {
+		Calendar c = Calendar.getInstance();
+		c.set(2000, 11, 06);
+		
+		int i = DateUtil.getAge(c.getTime());
+		System.out.println(i);
+	}
+	
+	
 	@Test
 	public void testGetMonthEnd() {
 		

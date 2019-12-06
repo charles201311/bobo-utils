@@ -14,6 +14,21 @@ public class StringUtil {
 
 	/**
 	 * 
+	 * @Title: isNumber
+	 * @Description: 判断是否是数值类型
+	 * @param str
+	 * @return
+	 * @return: boolean
+	 */
+	public static boolean isNumber(String str) {
+
+		String regex = "^(-)?[0-9]+(.[0-9]+)?$";
+		return 	str.matches(regex);
+
+	}
+
+	/**
+	 * 
 	 * @Title: isPhoneNumber
 	 * @Description: //校验是否是手机号
 	 * @param str
@@ -21,11 +36,11 @@ public class StringUtil {
 	 * @return: boolean
 	 */
 	public static boolean isPhoneNumber(String str) {
-		//如果不为空则进行手机号判断
+		// 如果不为空则进行手机号判断
 		if (hasText(str)) {
 			// 手机号的规则
 			String regex = "1[3|4|5|6|7|8|9]\\d{9}";
-			//根据规则匹配
+			// 根据规则匹配
 			return str.matches(regex);
 		}
 		return false;
@@ -40,10 +55,10 @@ public class StringUtil {
 	 * @return: boolean
 	 */
 	public static boolean isEmail(String str) {
-		
-		String regex="[A-z0-9_]+\\@[A-z0-9]+\\.[A-z]+";
-		
-		if(hasText(str)) {
+
+		String regex = "[A-z0-9_]+\\@[A-z0-9]+\\.[A-z]+";
+
+		if (hasText(str)) {
 			return str.matches(regex);
 		}
 		return false;
