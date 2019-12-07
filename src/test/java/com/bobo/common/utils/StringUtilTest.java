@@ -7,6 +7,15 @@ import org.junit.Test;
 public class StringUtilTest {
 	
 	@Test
+	public   void  testGetNumFromUrl() {
+		String url="http://news.cnstock.com/news,yw-201908-4413224.htm";
+		String string = StringUtil.getLastNumber(url);
+		System.out.println(string);
+	}
+	
+
+	
+	@Test
 	public   void  testIsNumber() {
 		boolean b = StringUtil.isNumber("12345.12");
 		System.out.println(b);

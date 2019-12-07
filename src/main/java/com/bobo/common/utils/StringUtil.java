@@ -2,6 +2,8 @@ package com.bobo.common.utils;
 
 import java.io.UnsupportedEncodingException;
 import java.util.Random;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /***
  * 
@@ -11,6 +13,28 @@ import java.util.Random;
  * @date: 2019年12月5日 上午10:00:07
  */
 public class StringUtil {
+	
+	
+	/*
+	* 方法功能：根据正则在字符串提取一段值，用于后面在url地址里提取ID值。
+	* 例如在“http://news.cnstock.com/news,yw-201908-4413224.htm”把“4413224”提取出来。
+	*/
+	public static String getLastNumber(String url){
+		
+		//String regex ="(\\d+)";
+		String regex ="[0-9]+(?=[^0-9]*$)";
+	    //编译规则
+		Pattern c = Pattern.compile(regex);
+		//匹配
+		Matcher m = c.matcher(url);
+		if(m.find()) {
+			return m.group();
+		}
+		return null;
+		
+		
+		
+	}
 
 	/**
 	 * 
