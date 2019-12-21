@@ -1,6 +1,7 @@
 package com.bobo.common.utils;
 
 import java.io.UnsupportedEncodingException;
+import java.net.URL;
 import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -14,6 +15,26 @@ import java.util.regex.Pattern;
  */
 public class StringUtil {
 	
+	/**
+	 * 校验传入的参数是否为url
+	 * @param param
+	 * @return
+	 */
+	public static boolean isHttpUrl(String param) {
+		 URL url;  
+		 try {  
+	         url = new URL(param);
+	        url.openStream();  
+	         return true; 
+	    } catch (Exception e1) {  
+	         System.out.println("连接打不开!");  
+	       
+	    }  
+		 return false;
+		
+	}
+	
+
 	
 	/*
 	* 方法功能：根据正则在字符串提取一段值，用于后面在url地址里提取ID值。
