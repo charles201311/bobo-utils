@@ -3,6 +3,7 @@ package com.bobo.common.utils;
 import java.awt.geom.Point2D;
 
 public class DistanceUtil {
+	
 	 private static final double EARTH_RADIUS = 6371393; // 平均半径,单位：m
 	 //输入经纬度，计算两个坐标间的距离
 	  public static double getDistance(double j1,double w1,double j2,double w2) {
